@@ -1,4 +1,4 @@
-# -Discord-Bot
+# Yukkuritaku Discord-Bot
 おらがはじめて作ったDiscord Botやぞーーー！
 プロセカやってて作ってみたいなーておもて作りました
 ほんとは絵も描きたいけどこれもやりたいからがんばる
