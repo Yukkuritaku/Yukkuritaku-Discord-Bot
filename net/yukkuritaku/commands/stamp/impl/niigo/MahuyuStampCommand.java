@@ -8,7 +8,7 @@ import net.yukkuritaku.utils.ReplyUtils;
 import java.util.List;
 import java.util.Random;
 
-//まふゆちゃんお誕生日おめでとうー！
+//1月17日　まふゆちゃんお誕生日おめでとうー！
 public class MahuyuStampCommand extends Command {
 
     public MahuyuStampCommand(){
