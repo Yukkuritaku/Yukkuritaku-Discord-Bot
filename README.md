@@ -1,14 +1,2 @@
 # Yukkuritaku Discord-Bot
-おらがはじめて作ったDiscord Botやぞーーー！
-プロセカやってて作ってみたいなーておもて作りました
-ほんとは絵も描きたいけどこれもやりたいからがんばる
-
-内容:Sekai Viewerを使ってランダムにスタンプを表示させる
-
-まだ未完成です！
-
-もっともーっと
-頑張るよ！
-
-スタンプの奴はsekai viewer使ってる
-許可必須かはわかんない...
+My First Discord Bot
