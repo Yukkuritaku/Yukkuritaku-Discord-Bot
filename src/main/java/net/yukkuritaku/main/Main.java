@@ -40,10 +40,10 @@ import javax.security.auth.login.LoginException;
 
 public final class Main {
 
-    public static final String Token = "ODAyMDM0ODkxODY0NjcwMjQ4.YApXMw.8agDy-n9_msHQc8KKpHlUz5n3Bw";
+    public static final String Token = "token";
     public static final String Prefixcmd = ".";
-    public static final String OwnerId = "694808205259309148";
-    public static final String DiscordUrl = "https://discord.gg/N6UYhsXx7J";
+    public static final String OwnerId = "ownerid";
+    public static final String DiscordUrl = "url";
 
     /**
      * Starting Main Method.
