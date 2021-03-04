@@ -1,2 +1,2 @@
 # Yukkuritaku Discord-Bot
-My First Discord Bot
+My First Simple Discord Bot
