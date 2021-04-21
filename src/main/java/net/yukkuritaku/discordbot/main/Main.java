@@ -39,10 +39,10 @@ import javax.security.auth.login.LoginException;
 
 public final class Main {
 
-    public static final String Token = "ODAyMDM0ODkxODY0NjcwMjQ4.YApXMw.NMVC9b2TZ_cILEXyREInXQkxoMs";
+    public static final String Token = "token";
     public static final String Prefixcmd = ".";
-    public static final String OwnerId = "694808205259309148";
-    public static final String DiscordUrl = "https://discord.gg/7yE5Z2RxKH";
+    public static final String OwnerId = "ownerid";
+    public static final String DiscordUrl = "url";
     public static final String activitymsg = ".helpで見れるよ ただの遊び心のBot";
 
     /**
