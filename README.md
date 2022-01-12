@@ -1,5 +1,5 @@
-# Yukkuritaku Discord-Bot
-My First Simple Discord Bot
+## ゆっくりたくのプロセカ系のDiscord Bot
+スタンプと4コマとコミックを返信で表示するボットを追加します。すっごいシンプル
 
-こっちに移動しました -> https://github.com/Yukkuritaku/DiscordBot
-(this project has been moved to https://github.com/Yukkuritaku/DiscordBot)
+導入はこちらからどうぞ！: https://bit.ly/335zujy
+権限はbot、スラッシュコマンド追加です。
