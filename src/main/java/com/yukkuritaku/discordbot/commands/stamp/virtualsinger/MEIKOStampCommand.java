@@ -18,7 +18,7 @@ public class MEIKOStampCommand extends StampCommand {
 
             //[通常スタンプ]
             //すごいね (この顔かわいいよね)
-            Pair.of("stamp0007", "[通常スタンプ] すごいね (この顔かわいいよね)"),
+            Pair.of("stamp0007", "[通常スタンプ] すごいね"),
             //始めましょ（さあ、始めましょ！）
             Pair.of("stamp0296", "[通常スタンプ] 始めましょ（さあ、始めましょ！）"),
             //一息つきましょ？
