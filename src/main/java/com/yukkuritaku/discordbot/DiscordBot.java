@@ -31,11 +31,14 @@ import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.requests.restaction.CommandListUpdateAction;
 import net.dv8tion.jda.internal.utils.tuple.Pair;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.security.auth.login.LoginException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class DiscordBot {
@@ -45,12 +48,13 @@ public class DiscordBot {
     private static final String TOKEN = System.getenv("TOKEN");
     private static final List<BaseCommand> BASE_COMMAND_REGISTRY = new ArrayList<>();
 
-    public static final Logger LOGGER = LogManager.getLogger("Yukkuritaku-Discord-Bot");
+    public static final Logger LOGGER = LoggerFactory.getLogger(DiscordBot.class);
     public static final String PREFIX = ".";
     public static final String VERSION = "0.02-remake_unstable_code";
     public static final String JDA_VERSION = "5.0.0-alpha.4";
 
     public static void main(String[] args) throws LoginException, InterruptedException {
+
         LOGGER.info("Discord Botを起動します！ Version: {}, JDA Version: {}", VERSION, JDA_VERSION);
         List<CommandData> commandData = new LinkedList<>();
         JDABuilder jdaBuilder = JDABuilder.createDefault(TOKEN);
