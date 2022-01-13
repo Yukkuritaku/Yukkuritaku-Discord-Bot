@@ -1,4 +1,4 @@
-theme: jekyll-theme-cayman
+theme: jekyll-theme-slate
 google_analytics: UA-xxxxxx-x
 plugins:
   - jekyll-sitemap
