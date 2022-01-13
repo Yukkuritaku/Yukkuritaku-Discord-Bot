@@ -1,4 +1,4 @@
-package com.yukkuritaku.discordbot.commands;
+package com.yukkuritaku.discordbot.commands.stamp;
 
 /**
  * ユニットタイプ
