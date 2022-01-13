@@ -1,6 +1,7 @@
 package com.yukkuritaku.discordbot;
 
 import com.yukkuritaku.discordbot.commands.BaseCommand;
+import com.yukkuritaku.discordbot.commands.HelpCommand;
 import com.yukkuritaku.discordbot.commands.comic.ComicCommand;
 import com.yukkuritaku.discordbot.commands.fourframe.FourFrameCommand;
 import com.yukkuritaku.discordbot.commands.stamp.leoneed.HonamiStampCommand;
@@ -54,7 +55,6 @@ public class DiscordBot {
     public static final String JDA_VERSION = "5.0.0-alpha.4";
 
     public static void main(String[] args) throws LoginException, InterruptedException {
-
         LOGGER.info("Discord Botを起動します！ Version: {}, JDA Version: {}", VERSION, JDA_VERSION);
         List<CommandData> commandData = new LinkedList<>();
         JDABuilder jdaBuilder = JDABuilder.createDefault(TOKEN);
@@ -90,20 +90,27 @@ public class DiscordBot {
         BASE_COMMAND_REGISTRY.add(new MafuyuStampCommand());
         BASE_COMMAND_REGISTRY.add(new EnaStampCommand());
         BASE_COMMAND_REGISTRY.add(new MizukiStampCommand());
+
+        //その他
+        //まだ未完成
+        //BASE_COMMAND_REGISTRY.add(new HelpCommand());
+
         //Register Listeners
         BASE_COMMAND_REGISTRY.forEach(jdaBuilder::addEventListeners);
         //登録されたベースコマンドを全てスラッシュコマンドに登録する。
         BASE_COMMAND_REGISTRY.forEach(baseCommand -> {
                     List<Pair<String, String>> arrayListPrefix = baseCommand.getReturnPrefix();
-                    OptionData optionData = new OptionData(OptionType.STRING,
-                            "prefix",
-                            "プレフィックスです。表示したい物を選択できます。");
+                    if (!arrayListPrefix.isEmpty()) {
+                        OptionData optionData = new OptionData(OptionType.STRING,
+                                "prefix",
+                                "プレフィックスです。表示したい物を選択できます。");
 
-                    //選択肢に追加
-                    arrayListPrefix.forEach(pair -> optionData.addChoice(pair.getRight(), pair.getLeft()));
-                    CommandData data = new CommandData(baseCommand.getCommandName(), baseCommand.getCommandDescription())
-                            .addOptions(optionData);
-                    commandData.add(data);
+                        //選択肢に追加
+                        arrayListPrefix.forEach(pair -> optionData.addChoice(pair.getRight(), pair.getLeft()));
+                        CommandData data = new CommandData(baseCommand.getCommandName(), baseCommand.getCommandDescription())
+                                .addOptions(optionData);
+                        commandData.add(data);
+                    }
                 }
         );
 

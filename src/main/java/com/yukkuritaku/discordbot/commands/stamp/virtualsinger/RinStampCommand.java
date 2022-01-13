@@ -1,10 +1,9 @@
 package com.yukkuritaku.discordbot.commands.stamp.virtualsinger;
 
-import com.yukkuritaku.discordbot.commands.UnitType;
+import com.yukkuritaku.discordbot.commands.stamp.UnitType;
 import com.yukkuritaku.discordbot.commands.stamp.StampCommand;
 import com.yukkuritaku.discordbot.utils.ColorUtils;
 import net.dv8tion.jda.internal.utils.tuple.Pair;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 

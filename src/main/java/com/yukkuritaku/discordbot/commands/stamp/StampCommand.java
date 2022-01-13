@@ -2,7 +2,6 @@ package com.yukkuritaku.discordbot.commands.stamp;
 
 import com.yukkuritaku.discordbot.DiscordBot;
 import com.yukkuritaku.discordbot.commands.BaseCommand;
-import com.yukkuritaku.discordbot.commands.UnitType;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.MessageChannel;

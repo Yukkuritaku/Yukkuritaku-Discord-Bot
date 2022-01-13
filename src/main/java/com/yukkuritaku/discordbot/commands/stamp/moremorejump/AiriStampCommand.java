@@ -1,6 +1,6 @@
 package com.yukkuritaku.discordbot.commands.stamp.moremorejump;
 
-import com.yukkuritaku.discordbot.commands.UnitType;
+import com.yukkuritaku.discordbot.commands.stamp.UnitType;
 import com.yukkuritaku.discordbot.commands.stamp.StampCommand;
 import com.yukkuritaku.discordbot.utils.ColorUtils;
 import net.dv8tion.jda.internal.utils.tuple.Pair;
