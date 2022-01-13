@@ -1,2 +1,8 @@
-.idea
+#コンパイル時の物なので必要なし
 target
+
+#Intellijの設定とか
+.idea
+
+#大事な設定とか
+.env

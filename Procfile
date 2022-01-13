@@ -1,1 +1,1 @@
-worker: java -jar target/discord-bot-0.02-remake.jar
+worker: java -jar target/discordbot-2.1.6.jar
