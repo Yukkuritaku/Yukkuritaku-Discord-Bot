@@ -7,7 +7,7 @@ import net.dv8tion.jda.internal.utils.tuple.Pair;
 
 import java.util.List;
 
-public class KAITOStampCommand extends StampCommand {
+public final class KAITOStampCommand extends StampCommand {
 
     private static final List<Pair<String, String>> KAITO_STAMPS = List.of(
             //[キャラランクスタンプ]

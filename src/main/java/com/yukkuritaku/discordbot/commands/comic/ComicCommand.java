@@ -147,33 +147,21 @@ public final class ComicCommand extends BaseCommand {
     }
 
     @Override
-    public void onMessageReceived(@NotNull MessageReceivedEvent event) {
-        Message message = event.getMessage();
+    protected void onMessageCommandReceived(@NotNull MessageReceivedEvent event) {
         MessageChannel channel = event.getChannel();
-        String contentRaw = message.getContentRaw();
-        //複数の空白行を取得
-        String[] splitRaw = contentRaw.split("\\s+");
         List<Pair<String, String>> stampType = getReturnPrefix();
-        if (splitRaw[0].equalsIgnoreCase(DiscordBot.PREFIX + getCommandName()) ||
-                Arrays.stream(this.getAliases()).anyMatch(s -> splitRaw[0].equalsIgnoreCase(DiscordBot.PREFIX + s))) {
-            if (splitRaw.length == 1) {
-                int randomStamp = RANDOM.nextInt(stampType.size());
-                String id = stampType.get(randomStamp).getLeft();
-                String url = String.format(getUrl(), id);
-                EmbedBuilder builder = new EmbedBuilder();
-                putBuilder(builder, id);
-                builder.setImage(url);
-                builder.setColor(this.getColor());
-                channel.sendMessageEmbeds(builder.build()).queue();
-            }
-        }
+        int randomStamp = RANDOM.nextInt(stampType.size());
+        String id = stampType.get(randomStamp).getLeft();
+        String url = String.format(getUrl(), id);
+        EmbedBuilder builder = new EmbedBuilder();
+        putBuilder(builder, id);
+        builder.setImage(url);
+        builder.setColor(this.getColor());
+        channel.sendMessageEmbeds(builder.build()).queue();
     }
 
     @Override
-    public void onSlashCommand(@NotNull SlashCommandEvent event) {
-        if (!event.getName().contains(this.getCommandName())) {
-            return;
-        }
+    protected void onSlashCommandReceived(@NotNull SlashCommandEvent event) {
         var prefix1 = event.getOption("prefix1");
         var prefix2 = event.getOption("prefix2");
         if (prefix1 != null && prefix2 != null){

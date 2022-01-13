@@ -27,6 +27,7 @@ import com.yukkuritaku.discordbot.commands.stamp.wonderlands.RuiStampCommand;
 import com.yukkuritaku.discordbot.commands.stamp.wonderlands.TsukasaStampCommand;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
@@ -51,13 +52,16 @@ public class DiscordBot {
 
     public static final Logger LOGGER = LoggerFactory.getLogger(DiscordBot.class);
     public static final String PREFIX = ".";
-    public static final String VERSION = "0.02-remake_unstable_code";
+    public static final String VERSION = "0.03-remake_unstable_code";
     public static final String JDA_VERSION = "5.0.0-alpha.4";
 
     public static void main(String[] args) throws LoginException, InterruptedException {
         LOGGER.info("Discord Botを起動します！ Version: {}, JDA Version: {}", VERSION, JDA_VERSION);
         List<CommandData> commandData = new LinkedList<>();
-        JDABuilder jdaBuilder = JDABuilder.createDefault(TOKEN);
+        JDABuilder jdaBuilder = JDABuilder
+                .createDefault(TOKEN)
+               // .setActivity(Activity.playing("ヘルプコマンドは.helpか/helpを使ってね"))
+        ;
         //バチャシン
         BASE_COMMAND_REGISTRY.add(new MikuStampCommand());
         BASE_COMMAND_REGISTRY.add(new RinStampCommand());
@@ -93,7 +97,7 @@ public class DiscordBot {
 
         //その他
         //まだ未完成
-        //BASE_COMMAND_REGISTRY.add(new HelpCommand());
+        BASE_COMMAND_REGISTRY.add(new HelpCommand());
 
         //Register Listeners
         BASE_COMMAND_REGISTRY.forEach(jdaBuilder::addEventListeners);

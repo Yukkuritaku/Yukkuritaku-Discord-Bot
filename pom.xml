@@ -6,7 +6,7 @@
 
     <groupId>com.yukkuritaku.discordbot</groupId>
     <artifactId>discord-bot</artifactId>
-    <version>0.02-remake</version>
+    <version>0.03-remake</version>
 
     <dependencies>
         <!-- Java Discord API -->

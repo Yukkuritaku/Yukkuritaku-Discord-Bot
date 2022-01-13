@@ -7,7 +7,7 @@ import net.dv8tion.jda.internal.utils.tuple.Pair;
 
 import java.util.List;
 
-public class KohaneStampCommand extends StampCommand {
+public final class KohaneStampCommand extends StampCommand {
 
     private static final List<Pair<String, String>> KOHANE_STAMPS = List.of(
             //[キャラランクスタンプ]

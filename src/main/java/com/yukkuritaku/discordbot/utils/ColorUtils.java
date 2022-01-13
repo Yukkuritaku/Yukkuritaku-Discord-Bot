@@ -3,6 +3,10 @@ package com.yukkuritaku.discordbot.utils;
 import java.awt.*;
 
 public final class ColorUtils {
+
+    private ColorUtils(){
+        throw new AssertionError("Utility class is cannot initializing");
+    }
     //ばちゃしん
 
     /**

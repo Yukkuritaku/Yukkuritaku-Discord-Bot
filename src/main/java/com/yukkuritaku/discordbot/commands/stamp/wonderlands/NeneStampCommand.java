@@ -7,7 +7,7 @@ import net.dv8tion.jda.internal.utils.tuple.Pair;
 
 import java.util.List;
 
-public class NeneStampCommand extends StampCommand {
+public final class NeneStampCommand extends StampCommand {
 
     private static final List<Pair<String, String>> NENE_STAMPS = List.of(
             //[キャラランクスタンプ]

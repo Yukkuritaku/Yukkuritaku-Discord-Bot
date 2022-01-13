@@ -7,7 +7,7 @@ import net.dv8tion.jda.internal.utils.tuple.Pair;
 
 import java.util.List;
 
-public class ToyaStampCommand extends StampCommand {
+public final class ToyaStampCommand extends StampCommand {
 
     private static final List<Pair<String, String>> TOYA_STAMPS = List.of(
             //[キャラランクスタンプ]

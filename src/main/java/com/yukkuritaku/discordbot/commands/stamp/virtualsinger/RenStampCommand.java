@@ -7,7 +7,7 @@ import net.dv8tion.jda.internal.utils.tuple.Pair;
 
 import java.util.List;
 
-public class RenStampCommand extends StampCommand {
+public final class RenStampCommand extends StampCommand {
 
     private static final List<Pair<String, String>> REN_STAMPS = List.of(
             //[キャラランクスタンプ]

@@ -7,7 +7,7 @@ import net.dv8tion.jda.internal.utils.tuple.Pair;
 
 import java.util.List;
 
-public class MEIKOStampCommand extends StampCommand {
+public final class MEIKOStampCommand extends StampCommand {
 
     private static final List<Pair<String, String>> MEIKO_STAMPS = List.of(
             //[キャラランクスタンプ]

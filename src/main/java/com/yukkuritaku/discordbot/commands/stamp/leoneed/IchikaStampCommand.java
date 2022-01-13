@@ -7,7 +7,7 @@ import net.dv8tion.jda.internal.utils.tuple.Pair;
 
 import java.util.List;
 
-public class IchikaStampCommand extends StampCommand {
+public final class IchikaStampCommand extends StampCommand {
 
     private static final List<Pair<String, String>> ICHIKA_STAMPS = List.of(
             //[キャラランクスタンプ]

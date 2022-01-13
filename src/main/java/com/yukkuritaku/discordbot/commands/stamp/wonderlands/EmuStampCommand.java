@@ -7,7 +7,7 @@ import net.dv8tion.jda.internal.utils.tuple.Pair;
 
 import java.util.List;
 
-public class EmuStampCommand extends StampCommand {
+public final class EmuStampCommand extends StampCommand {
 
     private static final List<Pair<String, String>> EMU_STAMPS = List.of(
             //[キャラランクスタンプ]

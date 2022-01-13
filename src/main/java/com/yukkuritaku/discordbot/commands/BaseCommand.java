@@ -1,17 +1,22 @@
 package com.yukkuritaku.discordbot.commands;
 
+import com.yukkuritaku.discordbot.DiscordBot;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.Interaction;
 import net.dv8tion.jda.internal.utils.tuple.Pair;
+import org.apache.http.HttpStatus;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClients;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
 import java.awt.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -24,13 +29,13 @@ public abstract class BaseCommand extends ListenerAdapter {
     private final Color color;
     private final String commandName;
     private final String commandDescription;
-    private final String[] aliases;
+    @Nullable private final String[] aliases;
     private final List<Pair<String, String>> returnPrefix;
 
     public BaseCommand(@Nonnull Color color,
                        @Nonnull String commandName,
                        @Nonnull String commandDescription,
-                       @Nonnull String[] aliases,
+                       @Nullable String[] aliases,
                        @Nonnull List<Pair<String, String>> returnPrefix) {
         this.color = color;
         this.commandName = commandName;
@@ -40,21 +45,37 @@ public abstract class BaseCommand extends ListenerAdapter {
     }
 
     @Override
-    public abstract void onMessageReceived(@NotNull MessageReceivedEvent event);
+    public void onMessageReceived(@NotNull MessageReceivedEvent event){
+        String[] splitRaw = event.getMessage().getContentRaw().split("\\s+");
+        if (splitRaw[0].equalsIgnoreCase(DiscordBot.PREFIX + getCommandName()) || (
+                        getAliases() != null && getAliases().length != 0 && Arrays.stream(this.getAliases())
+                        .anyMatch(s -> splitRaw[0].equalsIgnoreCase(DiscordBot.PREFIX + s))
+                )) {
+            if (splitRaw.length == 1){
+                onMessageCommandReceived(event);
+            }
+        }
+    }
 
     @Override
-    public abstract void onSlashCommand(@NotNull SlashCommandEvent event);
+    public void onSlashCommand(@NotNull SlashCommandEvent event){
+        if (!event.getName().equals(this.getCommandName())) {
+            return;
+        }
+        onSlashCommandReceived(event);
+    }
+
+    protected abstract void onMessageCommandReceived(@NotNull MessageReceivedEvent event);
+
+    protected abstract void onSlashCommandReceived(@NotNull SlashCommandEvent event);
 
     public final void checkUrl(Interaction interaction, String url){
-        try {
-            URL httpCheck = new URL(url);
-            HttpURLConnection connection = (HttpURLConnection) httpCheck.openConnection();
-            connection.connect();
-            int code = connection.getResponseCode();
-            if (code == HttpURLConnection.HTTP_NOT_FOUND) {
-                interaction.replyFormat("Http 404 不明なURL指定です。指定されたurl: %s", url).queue();
+        try(CloseableHttpResponse response = HttpClients.createDefault().execute(new HttpGet(url))) {
+            int statusCode = response.getStatusLine().getStatusCode();
+            if (statusCode == HttpStatus.SC_NOT_FOUND){
+                interaction.reply("[Error]: Website error: 404 Not Found").queue();
             }
-        } catch (Exception e) {
+        }catch (IOException e){
             e.printStackTrace();
         }
     }
@@ -94,6 +115,7 @@ public abstract class BaseCommand extends ListenerAdapter {
      *
      * @return このコマンドのエイリアス
      */
+    @Nullable
     public final String[] getAliases() {
         return this.aliases;
     }
