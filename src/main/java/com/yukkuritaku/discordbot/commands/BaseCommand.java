@@ -29,7 +29,8 @@ public abstract class BaseCommand extends ListenerAdapter {
     private final Color color;
     private final String commandName;
     private final String commandDescription;
-    @Nullable private final String[] aliases;
+    @Nullable
+    private final String[] aliases;
     private final List<Pair<String, String>> returnPrefix;
 
     public BaseCommand(@Nonnull Color color,
@@ -45,20 +46,18 @@ public abstract class BaseCommand extends ListenerAdapter {
     }
 
     @Override
-    public void onMessageReceived(@NotNull MessageReceivedEvent event){
+    public void onMessageReceived(@NotNull MessageReceivedEvent event) {
         String[] splitRaw = event.getMessage().getContentRaw().split("\\s+");
         if (splitRaw[0].equalsIgnoreCase(DiscordBot.PREFIX + getCommandName()) || (
-                        getAliases() != null && getAliases().length != 0 && Arrays.stream(this.getAliases())
+                getAliases() != null && getAliases().length != 0 && Arrays.stream(this.getAliases())
                         .anyMatch(s -> splitRaw[0].equalsIgnoreCase(DiscordBot.PREFIX + s))
-                )) {
-            if (splitRaw.length == 1){
-                onMessageCommandReceived(event);
-            }
+        )) {
+            onMessageCommandReceived(event);
         }
     }
 
     @Override
-    public void onSlashCommand(@NotNull SlashCommandEvent event){
+    public void onSlashCommand(@NotNull SlashCommandEvent event) {
         if (!event.getName().equals(this.getCommandName())) {
             return;
         }
@@ -69,13 +68,13 @@ public abstract class BaseCommand extends ListenerAdapter {
 
     protected abstract void onSlashCommandReceived(@NotNull SlashCommandEvent event);
 
-    public final void checkUrl(Interaction interaction, String url){
-        try(CloseableHttpResponse response = HttpClients.createDefault().execute(new HttpGet(url))) {
+    public final void checkUrl(Interaction interaction, String url) {
+        try (CloseableHttpResponse response = HttpClients.createDefault().execute(new HttpGet(url))) {
             int statusCode = response.getStatusLine().getStatusCode();
-            if (statusCode == HttpStatus.SC_NOT_FOUND){
+            if (statusCode == HttpStatus.SC_NOT_FOUND) {
                 interaction.reply("[Error]: Website error: 404 Not Found").queue();
             }
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

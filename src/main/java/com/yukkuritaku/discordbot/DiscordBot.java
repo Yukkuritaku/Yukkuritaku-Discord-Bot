@@ -60,7 +60,7 @@ public class DiscordBot {
         List<CommandData> commandData = new LinkedList<>();
         JDABuilder jdaBuilder = JDABuilder
                 .createDefault(TOKEN)
-               // .setActivity(Activity.playing("ヘルプコマンドは.helpか/helpを使ってね"))
+                .setActivity(Activity.playing("ヘルプコマンドは.helpか/helpを使ってね"))
         ;
         //バチャシン
         BASE_COMMAND_REGISTRY.add(new MikuStampCommand());
@@ -97,7 +97,7 @@ public class DiscordBot {
 
         //その他
         //まだ未完成
-        BASE_COMMAND_REGISTRY.add(new HelpCommand());
+        jdaBuilder.addEventListeners(new HelpCommand());
 
         //Register Listeners
         BASE_COMMAND_REGISTRY.forEach(jdaBuilder::addEventListeners);
@@ -176,11 +176,18 @@ public class DiscordBot {
             }
         }
         comicCommand.addOptions(comic1, comic2);
+        //ヘルプコマンド
+        HelpCommand helpCommand = new HelpCommand();
+        CommandData helpCommandData = new CommandData(helpCommand.getCommandName(),
+                helpCommand.getCommandDescription() + "コマンド名を入れると詳細を確認できます。");
+        OptionData helpCommandOption = new OptionData(OptionType.STRING, "command_name",
+                "コマンド名です。ここにコマンド名を入れると詳細を確認できます。");
+        helpCommandData.addOptions(helpCommandOption);
 
         JDA = jdaBuilder.build();
         CommandListUpdateAction action = JDA.updateCommands();
         action.timeout(10, TimeUnit.SECONDS).addCommands(commandData)
-                .addCommands(fourFrameData, fourFrameData1, fourFrameData2, fourFrameData3, comicCommand)
+                .addCommands(fourFrameData, fourFrameData1, fourFrameData2, fourFrameData3, comicCommand, helpCommandData)
                 .queue();
         JDA.awaitReady();
         LOGGER.info("起動完了！登録したListener数: {}", JDA.getRegisteredListeners().size());
