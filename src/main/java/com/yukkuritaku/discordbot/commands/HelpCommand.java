@@ -6,6 +6,8 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.interactions.components.ActionRow;
+import net.dv8tion.jda.api.interactions.components.Button;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -80,6 +82,7 @@ public final class HelpCommand extends BaseCommand{
         }
         if (option == null) {
             commands.forEach(baseCommand -> builder.appendDescription("`" + baseCommand.getCommandName() + "`, "));
+            event.replyEmbeds(builder.build()).queue();
         }else {
             String cmdName = option.getAsString();
             Optional<BaseCommand> command = commands.stream()

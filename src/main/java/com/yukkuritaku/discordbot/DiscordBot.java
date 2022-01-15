@@ -37,11 +37,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.security.auth.login.LoginException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
+import java.util.*;
 
 public class DiscordBot {
 
@@ -183,12 +179,17 @@ public class DiscordBot {
                 "コマンド名です。ここにコマンド名を入れると詳細を確認できます。");
         helpCommandData.addOptions(helpCommandOption);
 
+        commandData.addAll(Arrays.asList(
+                fourFrameData,
+                fourFrameData1,
+                fourFrameData2,
+                fourFrameData3,
+                comicCommand,
+                helpCommandData
+        ));
         JDA = jdaBuilder.build();
         CommandListUpdateAction action = JDA.updateCommands();
-        action.timeout(10, TimeUnit.SECONDS).addCommands(commandData)
-                .addCommands(fourFrameData, fourFrameData1, fourFrameData2, fourFrameData3)
-                .addCommands(comicCommand, helpCommandData)
-                .queue();
+        action.addCommands(commandData).queue();
         JDA.awaitReady();
         LOGGER.info("起動完了！登録したListener数: {}", JDA.getRegisteredListeners().size());
     }
