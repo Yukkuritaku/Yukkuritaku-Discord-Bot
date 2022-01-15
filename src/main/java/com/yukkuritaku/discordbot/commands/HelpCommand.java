@@ -1,10 +1,8 @@
 package com.yukkuritaku.discordbot.commands;
 
 import com.yukkuritaku.discordbot.DiscordBot;
-import com.yukkuritaku.discordbot.commands.stamp.StampCommand;
 import com.yukkuritaku.discordbot.utils.ColorUtils;
 import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.entities.Channel;
 import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -32,7 +30,6 @@ public final class HelpCommand extends BaseCommand{
         String[] splitRaw = event.getMessage().getContentRaw().split("\\s+");
         MessageChannel channel = event.getChannel();
 
-        DiscordBot.LOGGER.info(Arrays.toString(splitRaw));
         EmbedBuilder builder = new EmbedBuilder()
                 .setTitle("コマンドリスト")
                 .setColor(ColorUtils.rainbow(System.currentTimeMillis(), 10, 0, 1));

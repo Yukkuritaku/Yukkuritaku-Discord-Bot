@@ -52,16 +52,15 @@ public class DiscordBot {
 
     public static final Logger LOGGER = LoggerFactory.getLogger(DiscordBot.class);
     public static final String PREFIX = ".";
-    public static final String VERSION = "0.03-remake_unstable_code";
+    public static final String VERSION = "0.04-remake_unstable_code";
     public static final String JDA_VERSION = "5.0.0-alpha.4";
 
     public static void main(String[] args) throws LoginException, InterruptedException {
         LOGGER.info("Discord Botを起動します！ Version: {}, JDA Version: {}", VERSION, JDA_VERSION);
         List<CommandData> commandData = new LinkedList<>();
         JDABuilder jdaBuilder = JDABuilder
-                .createDefault(TOKEN)
-                .setActivity(Activity.playing("ヘルプコマンドは.helpか/helpを使ってね"))
-        ;
+                .createLight(TOKEN)
+                .setActivity(Activity.playing("ヘルプコマンドは.helpか/helpを使ってね"));
         //バチャシン
         BASE_COMMAND_REGISTRY.add(new MikuStampCommand());
         BASE_COMMAND_REGISTRY.add(new RinStampCommand());
@@ -168,10 +167,10 @@ public class DiscordBot {
         CommandData comicCommand = new CommandData(command.getCommandName(), command.getCommandDescription());
         OptionData comic1 = new OptionData(OptionType.STRING, "prefix1", "このプレフィックスは1から25個まで選ぶことが出来ます。");
         OptionData comic2 = new OptionData(OptionType.STRING, "prefix2", "このプレフィックスは26から40個まで選ぶことが出来ます。");
-        for (int i = 0; i < comicPrefix.size(); i++){
-            if (i < 25){
+        for (int i = 0; i < comicPrefix.size(); i++) {
+            if (i < 25) {
                 comic1.addChoice(comicPrefix.get(i).getRight(), comicPrefix.get(i).getLeft());
-            }else if (i < 50){
+            } else if (i < 50) {
                 comic2.addChoice(comicPrefix.get(i).getRight(), comicPrefix.get(i).getLeft());
             }
         }
@@ -187,7 +186,8 @@ public class DiscordBot {
         JDA = jdaBuilder.build();
         CommandListUpdateAction action = JDA.updateCommands();
         action.timeout(10, TimeUnit.SECONDS).addCommands(commandData)
-                .addCommands(fourFrameData, fourFrameData1, fourFrameData2, fourFrameData3, comicCommand, helpCommandData)
+                .addCommands(fourFrameData, fourFrameData1, fourFrameData2, fourFrameData3)
+                .addCommands(comicCommand, helpCommandData)
                 .queue();
         JDA.awaitReady();
         LOGGER.info("起動完了！登録したListener数: {}", JDA.getRegisteredListeners().size());

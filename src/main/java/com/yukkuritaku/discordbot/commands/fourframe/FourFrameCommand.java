@@ -1,5 +1,6 @@
 package com.yukkuritaku.discordbot.commands.fourframe;
 
+import com.yukkuritaku.discordbot.DiscordBot;
 import com.yukkuritaku.discordbot.commands.BaseCommand;
 import com.yukkuritaku.discordbot.utils.ColorUtils;
 import net.dv8tion.jda.api.EmbedBuilder;
@@ -255,7 +256,13 @@ public final class FourFrameCommand extends BaseCommand {
     }
 
     @Override
-    protected void onSlashCommandReceived(@NotNull SlashCommandEvent event) {
+    protected void onSlashCommandReceived(@NotNull SlashCommandEvent event) {}
+
+    @Override
+    public void onSlashCommand(@NotNull SlashCommandEvent event) {
+        if (!event.getName().contains(this.getCommandName())) {
+            return;
+        }
         var oldOption = event.getOption("old");
         var newOption1 = event.getOption("current1-25");
         var newOption2 = event.getOption("current26-50");
