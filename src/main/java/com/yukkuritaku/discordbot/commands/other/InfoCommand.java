@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import java.awt.*;
 import java.util.List;
 
-public class InfoCommand extends BaseCommand {
+public final class InfoCommand extends BaseCommand {
 
     private static final EmbedBuilder DESCRIPTION = new EmbedBuilder()
             .setTitle("このBotの詳細、バージョン")

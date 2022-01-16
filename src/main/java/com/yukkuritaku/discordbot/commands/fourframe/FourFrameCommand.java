@@ -295,6 +295,6 @@ public final class FourFrameCommand extends BaseCommand {
     @Override
     public String getUrl() {
         String format = "%s";
-        return "https://pbs.twimg.com/media/" + format + "?format=jpg&name=4096x4096";
+        return "https://pbs.twimg.com/media/" + format + "?format=jpg&name=orig";
     }
 }
