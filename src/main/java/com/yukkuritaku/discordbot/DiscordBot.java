@@ -1,9 +1,10 @@
 package com.yukkuritaku.discordbot;
 
 import com.yukkuritaku.discordbot.commands.BaseCommand;
-import com.yukkuritaku.discordbot.commands.HelpCommand;
+import com.yukkuritaku.discordbot.commands.other.HelpCommand;
 import com.yukkuritaku.discordbot.commands.comic.ComicCommand;
 import com.yukkuritaku.discordbot.commands.fourframe.FourFrameCommand;
+import com.yukkuritaku.discordbot.commands.other.InfoCommand;
 import com.yukkuritaku.discordbot.commands.stamp.leoneed.HonamiStampCommand;
 import com.yukkuritaku.discordbot.commands.stamp.leoneed.IchikaStampCommand;
 import com.yukkuritaku.discordbot.commands.stamp.leoneed.SakiStampCommand;
@@ -93,12 +94,14 @@ public class DiscordBot {
         //その他
         //まだ未完成
         jdaBuilder.addEventListeners(new HelpCommand());
+        BASE_COMMAND_REGISTRY.add(new InfoCommand());
 
         //Register Listeners
         BASE_COMMAND_REGISTRY.forEach(jdaBuilder::addEventListeners);
         //登録されたベースコマンドを全てスラッシュコマンドに登録する。
         BASE_COMMAND_REGISTRY.forEach(baseCommand -> {
                     List<Pair<String, String>> arrayListPrefix = baseCommand.getReturnPrefix();
+                    CommandData data = new CommandData(baseCommand.getCommandName(), baseCommand.getCommandDescription());
                     if (!arrayListPrefix.isEmpty()) {
                         OptionData optionData = new OptionData(OptionType.STRING,
                                 "prefix",
@@ -106,10 +109,9 @@ public class DiscordBot {
 
                         //選択肢に追加
                         arrayListPrefix.forEach(pair -> optionData.addChoice(pair.getRight(), pair.getLeft()));
-                        CommandData data = new CommandData(baseCommand.getCommandName(), baseCommand.getCommandDescription())
-                                .addOptions(optionData);
-                        commandData.add(data);
+                        data.addOptions(optionData);
                     }
+                    commandData.add(data);
                 }
         );
 

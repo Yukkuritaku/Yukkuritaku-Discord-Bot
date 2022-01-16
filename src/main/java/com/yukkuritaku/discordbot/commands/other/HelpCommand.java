@@ -1,13 +1,12 @@
-package com.yukkuritaku.discordbot.commands;
+package com.yukkuritaku.discordbot.commands.other;
 
 import com.yukkuritaku.discordbot.DiscordBot;
+import com.yukkuritaku.discordbot.commands.BaseCommand;
 import com.yukkuritaku.discordbot.utils.ColorUtils;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.api.interactions.components.ActionRow;
-import net.dv8tion.jda.api.interactions.components.Button;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -17,7 +16,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-public final class HelpCommand extends BaseCommand{
+public final class HelpCommand extends BaseCommand {
 
     public HelpCommand() {
         super(new Color(ColorUtils.rainbow(System.currentTimeMillis(), 10, 0, 1)),
