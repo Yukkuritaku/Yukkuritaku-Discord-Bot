@@ -17,6 +17,7 @@ public final class KanadeStampCommand extends StampCommand {
             Pair.of("stamp0028", "[キャラランクスタンプ] わたしが作らなくちゃ..."),
 
             //[イベントスタンプ]
+            Pair.of("stamp0500", "[イベントスタンプ] やらなくちゃ"),
             //こういうことなんだね
             Pair.of("stamp0451", "[イベントスタンプ] こういうことなんだね"),
 
