@@ -217,7 +217,16 @@ public final class FourFrameCommand extends BaseCommand {
             Pair.of("FITo8pYaUAE-E5o", "第84話「ターゲットの油断」"),
 
             //第85話「眠りに添えて」
-            Pair.of("FIgFbMhakAMIxAg", "第85話「眠りに添えて」")
+            Pair.of("FIgFbMhakAMIxAg", "第85話「眠りに添えて」"),
+
+            //第86話「ワンダショ in America」
+            Pair.of("FJcDSNDaMAE9_kc", "第86話「ワンダショ in America」"),
+
+            //第87話「once upon a time」
+            Pair.of("FJ_xxRaaUAQRUm5", "第87話「once upon a time」"),
+
+            //第88話「笑顔を届けに…！」
+            Pair.of("FKE6n_PagAAl5bT", "第88話「笑顔を届けに…！」")
     );
 
     public FourFrameCommand() {

@@ -24,6 +24,7 @@ public final class InfoCommand extends BaseCommand {
             .addField("Changelog", """
                         0.04-remake_unstable_code: 色々頑張って移植したよ 不具合多いかもだけど許して!
                         0.05-remake_unstable_code: 奏ちゃんのスタンプ「やらなくちゃ」を追加。
+                        0.06: 4コマ追加
                         """, false);
 
     public InfoCommand() {

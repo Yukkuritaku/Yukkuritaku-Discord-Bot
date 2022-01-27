@@ -1,9 +1,9 @@
 package com.yukkuritaku.discordbot;
 
 import com.yukkuritaku.discordbot.commands.BaseCommand;
-import com.yukkuritaku.discordbot.commands.other.HelpCommand;
 import com.yukkuritaku.discordbot.commands.comic.ComicCommand;
 import com.yukkuritaku.discordbot.commands.fourframe.FourFrameCommand;
+import com.yukkuritaku.discordbot.commands.other.HelpCommand;
 import com.yukkuritaku.discordbot.commands.other.InfoCommand;
 import com.yukkuritaku.discordbot.commands.stamp.leoneed.HonamiStampCommand;
 import com.yukkuritaku.discordbot.commands.stamp.leoneed.IchikaStampCommand;
@@ -49,7 +49,7 @@ public class DiscordBot {
 
     public static final Logger LOGGER = LoggerFactory.getLogger(DiscordBot.class);
     public static final String PREFIX = ".";
-    public static final String VERSION = "0.05-remake_unstable_code";
+    public static final String VERSION = "0.06";
     public static final String JDA_VERSION = "5.0.0-alpha.4";
 
     public static void main(String[] args) throws LoginException, InterruptedException {
