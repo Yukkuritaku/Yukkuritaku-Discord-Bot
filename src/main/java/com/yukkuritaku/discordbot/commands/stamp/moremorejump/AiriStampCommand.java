@@ -55,7 +55,10 @@ public final class AiriStampCommand extends StampCommand {
                 ColorUtils.AIRI,
                 "stampairi",
                 "愛莉ちゃんのスタンプからどれかが選ばれるか選択するよ",
-                new String[] {"airi", "あいり", "あいりちゃん", "愛莉", "愛莉ちゃん", "桃井愛莉", "桃井愛莉ちゃん"},
+                new String[] {"airi", "あいり", "あいりちゃん", "愛莉", "愛莉ちゃん", "桃井愛莉", "桃井愛莉ちゃん",
+        //NOTE: 咲希ちゃん、えむちゃんの愛莉ちゃんの呼び方 決して自分が考えたわけじゃない
+                "あいり先輩", "愛莉ちゃんセンパイ"
+                },
                 AIRI_STAMPS);
     }
 }
