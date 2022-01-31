@@ -17,6 +17,9 @@ public final class EmuStampCommand extends StampCommand {
             Pair.of("stamp0025", "[キャラランクスタンプ] 約束、してくれたよね"),
 
             //[イベントスタンプ]
+            //ジャジャーン！
+            //NOTE: 愛莉ちゃんのバレンタインイベント
+            Pair.of("stamp0527", "[イベントスタンプ] ジャジャーン！"),
             //勉強するぞ～！
             Pair.of("stamp0499", "[イベントスタンプ] 勉強するぞ～！"),
             //ポカポカするよ！

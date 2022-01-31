@@ -47,14 +47,14 @@ public final class ColorUtils {
     ICHIKA = new Color(0x33AAEE),
 
     /**
-     * 望月穂波のイメージカラー
-     */
-    HONAMI = new Color(0xEE6666),
-
-    /**
      * 天馬咲希のイメージカラー
      */
     SAKI = new Color(0xFFDD44),
+
+    /**
+     * 望月穂波のイメージカラー
+     */
+    HONAMI = new Color(0xEE6666),
 
     /**
      * 日野森志歩のイメージカラー
@@ -86,14 +86,14 @@ public final class ColorUtils {
     //びびばす
 
     /**
-     * 白石杏のイメージカラー
-     */
-    AN = new Color(0x00BBDD),
-
-    /**
      * 小豆沢こはねのイメージカラー
      */
     KOHANE = new Color(0xFF6699),
+
+    /**
+     * 白石杏のイメージカラー
+     */
+    AN = new Color(0x00BBDD),
 
     /**
      * 東雲彰人のイメージカラー
@@ -129,11 +129,6 @@ public final class ColorUtils {
 
     //にーご
 
-    /**
-     * 東雲絵名のイメージカラー
-     */
-    ENA = new Color(0xCCAA88),
-
     //奏ちゃんんんんｎ
     /**
      * 宵崎奏のイメージカラー
@@ -145,6 +140,11 @@ public final class ColorUtils {
      * 朝比奈まふゆのイメージカラー
      */
     MAFUYU = new Color(0x8888CC),
+
+    /**
+     * 東雲絵名のイメージカラー
+     */
+    ENA = new Color(0xCCAA88),
 
     /**
      * 暁山瑞希のイメージカラー
