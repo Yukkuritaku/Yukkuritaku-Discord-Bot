@@ -1,19 +1,16 @@
 package com.yukkuritaku.discordbot.commands.comic;
 
-import com.yukkuritaku.discordbot.DiscordBot;
 import com.yukkuritaku.discordbot.commands.BaseCommand;
 import com.yukkuritaku.discordbot.utils.ColorUtils;
 import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.MessageChannel;
-import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.internal.utils.tuple.Pair;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
-import java.util.Arrays;
 import java.util.List;
 
 public final class ComicCommand extends BaseCommand {
@@ -133,7 +130,7 @@ public final class ComicCommand extends BaseCommand {
                 ));
     }
 
-    private void add(SlashCommandEvent event, OptionMapping mapping) {
+    private void add(SlashCommandInteractionEvent event, OptionMapping mapping) {
         String id = mapping.getAsString();
         String url = String.format(getUrl(), id);
         checkUrl(event, url);
@@ -161,7 +158,7 @@ public final class ComicCommand extends BaseCommand {
     }
 
     @Override
-    protected void onSlashCommandReceived(@NotNull SlashCommandEvent event) {
+    protected void onSlashCommandReceived(@NotNull SlashCommandInteractionEvent event) {
         var prefix1 = event.getOption("prefix1");
         var prefix2 = event.getOption("prefix2");
         if (prefix1 != null && prefix2 != null){

@@ -3,7 +3,7 @@ package com.yukkuritaku.discordbot.commands.stamp;
 import com.yukkuritaku.discordbot.commands.BaseCommand;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageChannel;
-import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.internal.utils.tuple.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -50,7 +50,7 @@ public abstract class StampCommand extends BaseCommand {
     }
 
     @Override
-    protected void onSlashCommandReceived(@NotNull SlashCommandEvent event) {
+    protected void onSlashCommandReceived(@NotNull SlashCommandInteractionEvent event) {
         var optionMapping = event.getOption("prefix");
         if (optionMapping != null) {
             String id = optionMapping.getAsString();

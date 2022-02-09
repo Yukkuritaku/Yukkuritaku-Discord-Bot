@@ -17,6 +17,8 @@ public final class KohaneStampCommand extends StampCommand {
             Pair.of("stamp0020", "[キャラランクスタンプ] 歌うよ！"),
 
             //[イベントスタンプ]
+            //いいんですか？
+            Pair.of("stamp0528", "[イベントスタンプ] いいんですか？"),
             //任せて！
             Pair.of("stamp0494", "[イベントスタンプ] 任せて！"),
             //もっといける！

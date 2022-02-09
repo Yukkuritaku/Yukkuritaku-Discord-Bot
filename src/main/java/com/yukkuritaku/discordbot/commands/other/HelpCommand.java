@@ -5,7 +5,7 @@ import com.yukkuritaku.discordbot.commands.BaseCommand;
 import com.yukkuritaku.discordbot.utils.ColorUtils;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageChannel;
-import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -67,7 +67,7 @@ public final class HelpCommand extends BaseCommand {
     }
 
     @Override
-    protected void onSlashCommandReceived(@NotNull SlashCommandEvent event) {
+    protected void onSlashCommandReceived(@NotNull SlashCommandInteractionEvent event) {
         var option = event.getOption("command_name");
         EmbedBuilder builder = new EmbedBuilder()
                 .setTitle("コマンドリスト")

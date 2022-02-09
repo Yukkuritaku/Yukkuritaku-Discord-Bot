@@ -30,9 +30,9 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
-import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.requests.restaction.CommandListUpdateAction;
+import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 import net.dv8tion.jda.internal.utils.tuple.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,12 +49,12 @@ public class DiscordBot {
 
     public static final Logger LOGGER = LoggerFactory.getLogger(DiscordBot.class);
     public static final String PREFIX = ".";
-    public static final String VERSION = "0.07";
-    public static final String JDA_VERSION = "5.0.0-alpha.4";
+    public static final String VERSION = "0.08";
+    public static final String JDA_VERSION = "5.0.0-alpha.5";
 
     public static void main(String[] args) throws LoginException, InterruptedException {
         LOGGER.info("Discord Botを起動します！ Version: {}, JDA Version: {}", VERSION, JDA_VERSION);
-        List<CommandData> commandData = new LinkedList<>();
+        List<CommandDataImpl> commandData = new LinkedList<>();
         JDABuilder jdaBuilder = JDABuilder
                 .createLight(TOKEN)
                 .setActivity(Activity.playing("ヘルプコマンドは.helpか/helpを使ってね"));
@@ -101,7 +101,7 @@ public class DiscordBot {
         //登録されたベースコマンドを全てスラッシュコマンドに登録する。
         BASE_COMMAND_REGISTRY.forEach(baseCommand -> {
                     List<Pair<String, String>> arrayListPrefix = baseCommand.getReturnPrefix();
-                    CommandData data = new CommandData(baseCommand.getCommandName(), baseCommand.getCommandDescription());
+                    CommandDataImpl data = new CommandDataImpl(baseCommand.getCommandName(), baseCommand.getCommandDescription());
                     if (!arrayListPrefix.isEmpty()) {
                         OptionData optionData = new OptionData(OptionType.STRING,
                                 "prefix",
@@ -119,12 +119,12 @@ public class DiscordBot {
         //4コマコマンド
         FourFrameCommand fourFrameCommand = new FourFrameCommand();
         jdaBuilder.addEventListeners(fourFrameCommand);
-        CommandData fourFrameData = new CommandData(fourFrameCommand.getCommandName(), fourFrameCommand.getCommandDescription());
-        CommandData fourFrameData1 = new CommandData(fourFrameCommand.getCommandName() + "_2",
+        CommandDataImpl fourFrameData = new CommandDataImpl(fourFrameCommand.getCommandName(), fourFrameCommand.getCommandDescription());
+        CommandDataImpl fourFrameData1 = new CommandDataImpl(fourFrameCommand.getCommandName() + "_2",
                 fourFrameCommand.getCommandDescription() + " 複数に分かれてるのはコマンドオプションが25個以下までしか設定できないから。");
-        CommandData fourFrameData2 = new CommandData(fourFrameCommand.getCommandName() + "_3",
+        CommandDataImpl fourFrameData2 = new CommandDataImpl(fourFrameCommand.getCommandName() + "_3",
                 fourFrameCommand.getCommandDescription() + " 複数に分かれてるのはコマンドオプションが25個以下までしか設定できないから。");
-        CommandData fourFrameData3 = new CommandData(fourFrameCommand.getCommandName() + "_4",
+        CommandDataImpl fourFrameData3 = new CommandDataImpl(fourFrameCommand.getCommandName() + "_4",
                 fourFrameCommand.getCommandDescription() + " 複数に分かれてるのはコマンドオプションが25個以下までしか設定できないから。");
         List<Pair<String, String>> fourFramePrefix = fourFrameCommand.getReturnPrefix();
 
@@ -162,7 +162,7 @@ public class DiscordBot {
         ComicCommand command = new ComicCommand();
         List<Pair<String, String>> comicPrefix = command.getReturnPrefix();
         jdaBuilder.addEventListeners(command);
-        CommandData comicCommand = new CommandData(command.getCommandName(), command.getCommandDescription());
+        CommandDataImpl comicCommand = new CommandDataImpl(command.getCommandName(), command.getCommandDescription());
         OptionData comic1 = new OptionData(OptionType.STRING, "prefix1", "このプレフィックスは1から25個まで選ぶことが出来ます。");
         OptionData comic2 = new OptionData(OptionType.STRING, "prefix2", "このプレフィックスは26から40個まで選ぶことが出来ます。");
         for (int i = 0; i < comicPrefix.size(); i++) {
@@ -175,7 +175,7 @@ public class DiscordBot {
         comicCommand.addOptions(comic1, comic2);
         //ヘルプコマンド
         HelpCommand helpCommand = new HelpCommand();
-        CommandData helpCommandData = new CommandData(helpCommand.getCommandName(),
+        CommandDataImpl helpCommandData = new CommandDataImpl(helpCommand.getCommandName(),
                 helpCommand.getCommandDescription() + "コマンド名を入れると詳細を確認できます。");
         OptionData helpCommandOption = new OptionData(OptionType.STRING, "command_name",
                 "コマンド名です。ここにコマンド名を入れると詳細を確認できます。");

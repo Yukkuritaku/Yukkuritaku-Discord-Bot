@@ -4,9 +4,9 @@ import com.yukkuritaku.discordbot.DiscordBot;
 import com.yukkuritaku.discordbot.commands.BaseCommand;
 import com.yukkuritaku.discordbot.utils.ColorUtils;
 import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.api.interactions.components.Button;
+import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -19,13 +19,10 @@ public final class InfoCommand extends BaseCommand {
             .setTitle("このBotの詳細、バージョン")
             .addField("詳細", "昔作っていたプロセカのお遊びボットを最新JDAに移植したものです。", false)
             .addField("Version", "このBotのバージョン: "
-                            + DiscordBot.VERSION + " JDAのバージョン: " + DiscordBot.JDA_VERSION,
+                            + DiscordBot.VERSION + "、JDAのバージョン: " + DiscordBot.JDA_VERSION,
                     false)
             .addField("Changelog", """
-                        0.04-remake_unstable_code: 色々頑張って移植したよ 不具合多いかもだけど許して!
-                        0.05-remake_unstable_code: 奏ちゃんのスタンプ「やらなくちゃ」を追加。
-                        0.06: 4コマ追加
-                        0.07: リファクタリングとか えむちゃんのスタンプ「ジャジャーン！」を追加。
+                        0.08: こはねちゃんのスタンプ「いいんですか？」を追加と、JDAを更新。
                         """, false);
 
     public InfoCommand() {
@@ -39,7 +36,7 @@ public final class InfoCommand extends BaseCommand {
     }
 
     @Override
-    protected void onSlashCommandReceived(@NotNull SlashCommandEvent event) {
+    protected void onSlashCommandReceived(@NotNull SlashCommandInteractionEvent event) {
         event.replyEmbeds(DESCRIPTION.build()).addActionRow(Button.link("https://github.com/Yukkuritaku/Yukkuritaku-Discord-Bot",
                 "このボットのソースコード")).queue();
     }

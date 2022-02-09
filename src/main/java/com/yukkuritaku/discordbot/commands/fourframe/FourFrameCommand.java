@@ -1,11 +1,10 @@
 package com.yukkuritaku.discordbot.commands.fourframe;
 
-import com.yukkuritaku.discordbot.DiscordBot;
 import com.yukkuritaku.discordbot.commands.BaseCommand;
 import com.yukkuritaku.discordbot.utils.ColorUtils;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageChannel;
-import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.internal.utils.tuple.Pair;
@@ -237,7 +236,7 @@ public final class FourFrameCommand extends BaseCommand {
                 FOUR_FRAMES);
     }
 
-    private void add(SlashCommandEvent event, OptionMapping mapping) {
+    private void add(SlashCommandInteractionEvent event, OptionMapping mapping) {
         String id = mapping.getAsString();
         String url = String.format(getUrl(), id);
 
@@ -265,10 +264,10 @@ public final class FourFrameCommand extends BaseCommand {
     }
 
     @Override
-    protected void onSlashCommandReceived(@NotNull SlashCommandEvent event) {}
+    protected void onSlashCommandReceived(@NotNull SlashCommandInteractionEvent event) {}
 
     @Override
-    public void onSlashCommand(@NotNull SlashCommandEvent event) {
+    public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
         if (!event.getName().contains(this.getCommandName())) {
             return;
         }

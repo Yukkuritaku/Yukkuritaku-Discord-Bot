@@ -6,14 +6,14 @@
 
     <groupId>com.yukkuritaku.discordbot</groupId>
     <artifactId>discord-bot</artifactId>
-    <version>0.07</version>
+    <version>0.08</version>
 
     <dependencies>
         <!-- Java Discord API -->
         <dependency>
             <groupId>net.dv8tion</groupId>
             <artifactId>JDA</artifactId>
-            <version>5.0.0-alpha.4</version>
+            <version>5.0.0-alpha.5</version>
         </dependency>
 
         <!-- Logger -->

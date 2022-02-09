@@ -1,10 +1,11 @@
 package com.yukkuritaku.discordbot.commands;
 
 import com.yukkuritaku.discordbot.DiscordBot;
-import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
+import net.dv8tion.jda.api.events.interaction.GenericInteractionCreateEvent;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.interactions.Interaction;
+import net.dv8tion.jda.api.interactions.callbacks.IReplyCallback;
 import net.dv8tion.jda.internal.utils.tuple.Pair;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -57,7 +58,7 @@ public abstract class BaseCommand extends ListenerAdapter {
     }
 
     @Override
-    public void onSlashCommand(@NotNull SlashCommandEvent event) {
+    public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
         if (!event.getName().equals(this.getCommandName())) {
             return;
         }
@@ -66,9 +67,9 @@ public abstract class BaseCommand extends ListenerAdapter {
 
     protected abstract void onMessageCommandReceived(@NotNull MessageReceivedEvent event);
 
-    protected abstract void onSlashCommandReceived(@NotNull SlashCommandEvent event);
+    protected abstract void onSlashCommandReceived(@NotNull SlashCommandInteractionEvent event);
 
-    public final void checkUrl(Interaction interaction, String url) {
+    public final void checkUrl(IReplyCallback interaction, String url) {
         try (CloseableHttpResponse response = HttpClients.createDefault().execute(new HttpGet(url))) {
             int statusCode = response.getStatusLine().getStatusCode();
             if (statusCode == HttpStatus.SC_NOT_FOUND) {
