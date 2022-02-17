@@ -49,7 +49,7 @@ public class DiscordBot {
 
     public static final Logger LOGGER = LoggerFactory.getLogger(DiscordBot.class);
     public static final String PREFIX = ".";
-    public static final String VERSION = "0.08";
+    public static final String VERSION = "0.09";
     public static final String JDA_VERSION = "5.0.0-alpha.5";
 
     public static void main(String[] args) throws LoginException, InterruptedException {
@@ -136,9 +136,10 @@ public class DiscordBot {
         OptionData current2 = new OptionData(OptionType.STRING, "current26-50",
                 "宇崎うそさんが描き下ろした4コマ漫画です。このプレフィックスは26話から50話までを選ぶことが出来ます。");
         OptionData current3 = new OptionData(OptionType.STRING, "current51-74",
-                "宇崎うそさんが描き下ろした4コマ漫画です。このプレフィックスは(特別編を除き)51話から74話までを選ぶことが出来ます。");
+                "宇崎うそさんが描き下ろした4コマ漫画です。このプレフィックスは51話から74話までを選ぶことが出来ます。");
         OptionData current4 = new OptionData(OptionType.STRING, "current75-100",
                 //旧漫画とコラボ漫画は省くので7になる
+                //最大100 (実際はタイアップ用4コマがあるので99話まで)
                 "宇崎うそさんが描き下ろした4コマ漫画です。このプレフィックスは75話から" + (fourFramePrefix.size() - 7) + "話までを選ぶことが出来ます。");
         for (int i = 0; i < fourFramePrefix.size(); i++) {
             if (i < 6) {

@@ -225,7 +225,27 @@ public final class FourFrameCommand extends BaseCommand {
             Pair.of("FJ_xxRaaUAQRUm5", "第87話「once upon a time」"),
 
             //第88話「笑顔を届けに…！」
-            Pair.of("FKE6n_PagAAl5bT", "第88話「笑顔を届けに…！」")
+            Pair.of("FKE6n_PagAAl5bT", "第88話「笑顔を届けに…！」"),
+
+            //第89話「頼れる先輩に」
+            Pair.of("FKUMrlFVQAAttcB", "第89話「頼れる先輩に」"),
+
+            //カップヌードルタイアップ特別編「超集中モード」
+            Pair.of("FKpESE4agAIYP4G", "カップヌードルタイアップ特別編「超集中モード」"),
+
+            //第90話「よいこのみんな」
+            //なんて尊い...!
+            Pair.of("FK9k0t7aMAIJ8oA", "第90話「よいこのみんな」"),
+
+            //第91話「わたしの好物」
+            //奏ちゃん誕生日おめでとう！
+            Pair.of("FLNA0PMVcAAKsFb", "第91話「わたしの好物」"),
+
+            //第92話「言葉は無力…！」
+            Pair.of("FLr7f1paIAEKAmB", "第92話「言葉は無力…！」"),
+
+            //第93話「KAITOと3人の座長」
+            Pair.of("FLw-AHhaIAAYQ1P", "第93話「KAITOと3人の座長」")
     );
 
     public FourFrameCommand() {

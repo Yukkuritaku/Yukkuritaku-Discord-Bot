@@ -23,6 +23,7 @@ public final class InfoCommand extends BaseCommand {
                     false)
             .addField("Changelog", """
                         0.08: こはねちゃんのスタンプ「いいんですか？」を追加と、JDAを更新。
+                        0.09: 4コマの89話から93話を追加。
                         """, false);
 
     public InfoCommand() {
