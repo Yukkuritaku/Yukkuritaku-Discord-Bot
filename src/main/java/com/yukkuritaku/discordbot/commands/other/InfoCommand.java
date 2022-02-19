@@ -22,8 +22,7 @@ public final class InfoCommand extends BaseCommand {
                             + DiscordBot.VERSION + "、JDAのバージョン: " + DiscordBot.JDA_VERSION,
                     false)
             .addField("Changelog", """
-                        0.08: こはねちゃんのスタンプ「いいんですか？」を追加と、JDAを更新。
-                        0.09: 4コマの89話から93話を追加。
+                        0.10: 志歩ちゃんのスタンプ「頼りにしてるよ」を追加。
                         """, false);
 
     public InfoCommand() {

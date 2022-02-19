@@ -21,6 +21,8 @@ public final class ShihoStampCommand extends StampCommand {
             Pair.of("stamp0458", "[イベントスタンプ] たくさんもらったよ"),
             //後悔しても知らないよ
             Pair.of("stamp0445", "[イベントスタンプ] 後悔しても知らないよ"),
+            //頼りにしてるよ
+            Pair.of("stamp0529", "[イベントスタンプ] 頼りにしてるよ"),
 
             //[通常スタンプ]
             //余裕でしょ
