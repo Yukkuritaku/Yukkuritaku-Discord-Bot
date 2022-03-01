@@ -245,7 +245,10 @@ public final class FourFrameCommand extends BaseCommand {
             Pair.of("FLr7f1paIAEKAmB", "第92話「言葉は無力…！」"),
 
             //第93話「KAITOと3人の座長」
-            Pair.of("FLw-AHhaIAAYQ1P", "第93話「KAITOと3人の座長」")
+            Pair.of("FLw-AHhaIAAYQ1P", "第93話「KAITOと3人の座長」"),
+
+            //第94話「似たもの同士？」
+            Pair.of("FMaQ9_jaMAAXqPD", "第94話「似たもの同士？」")
     );
 
     public FourFrameCommand() {

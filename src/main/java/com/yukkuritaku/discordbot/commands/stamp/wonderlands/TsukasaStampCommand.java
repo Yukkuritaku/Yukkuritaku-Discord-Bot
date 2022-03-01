@@ -14,10 +14,14 @@ public final class TsukasaStampCommand extends StampCommand {
             //オレについてこい！
             Pair.of("stamp0513", "[キャラランクスタンプ] オレについてこい！"),
 
+
             //あいつらがいたからだ
             Pair.of("stamp0024", "[キャラランクスタンプ] あいつらがいたからだ"),
 
             //[イベントスタンプ]
+            //ハッピーエンドにするぞ！
+            Pair.of("stamp0535", "[イベントスタンプ] ハッピーエンドにするぞ！"),
+
             //素晴らしいな！
             Pair.of("stamp0450", "[イベントスタンプ] 素晴らしいな！"),
 

@@ -23,6 +23,7 @@ public final class InfoCommand extends BaseCommand {
                     false)
             .addField("Changelog", """
                         0.10: 志歩ちゃんのスタンプ「頼りにしてるよ」を追加。
+                        0.11: 司のスタンプ「ハッピーエンドにするぞ！」を追加。4コマの94話を追加。
                         """, false);
 
     public InfoCommand() {
