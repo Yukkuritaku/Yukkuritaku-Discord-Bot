@@ -1,1 +1,1 @@
-worker: java -jar target/discord-bot-0.11.jar
+worker: java -jar target/discord-bot-0.12.jar

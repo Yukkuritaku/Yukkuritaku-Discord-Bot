@@ -24,6 +24,7 @@ public final class InfoCommand extends BaseCommand {
             .addField("Changelog", """
                         0.10: 志歩ちゃんのスタンプ「頼りにしてるよ」を追加。
                         0.11: 司のスタンプ「ハッピーエンドにするぞ！」を追加。4コマの94話を追加。
+                        0.12: えななんのスタンプ「逃げたくない...」と雫ちゃんのスタンプ「魔法みたいだわ！」を追加。4コマの95, 96, 97話を追加。
                         """, false);
 
     public InfoCommand() {

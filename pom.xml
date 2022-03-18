@@ -6,7 +6,7 @@
 
     <groupId>com.yukkuritaku.discordbot</groupId>
     <artifactId>discord-bot</artifactId>
-    <version>0.11</version>
+    <version>0.12</version>
 
     <dependencies>
         <!-- Java Discord API -->
@@ -20,14 +20,14 @@
         <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-classic</artifactId>
-        <version>1.2.10</version>
+        <version>1.2.11</version>
         </dependency>
 
         <!-- Guava -->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>31.0.1-jre</version>
+            <version>31.1-jre</version>
         </dependency>
 
         <!--LavaPlayer-->

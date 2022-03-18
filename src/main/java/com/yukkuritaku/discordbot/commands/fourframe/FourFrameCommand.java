@@ -248,7 +248,16 @@ public final class FourFrameCommand extends BaseCommand {
             Pair.of("FLw-AHhaIAAYQ1P", "第93話「KAITOと3人の座長」"),
 
             //第94話「似たもの同士？」
-            Pair.of("FMaQ9_jaMAAXqPD", "第94話「似たもの同士？」")
+            Pair.of("FMaQ9_jaMAAXqPD", "第94話「似たもの同士？」"),
+
+            //第95話「フェニランで特別なひとときを」
+            Pair.of("FMz7mlLaUAE2gJ_", "第95話「フェニランで特別なひとときを」"),
+
+            //第96話「夢は夢のままで」
+            Pair.of("FNSkiP4aIAIlOXW", "第96話「夢は夢のままで」"),
+
+            //第97話「大先生にお願い」
+            Pair.of("FN8JZbhVsAIVu8p", "第97話「大先生にお願い」")
     );
 
     public FourFrameCommand() {

@@ -17,6 +17,9 @@ public final class ShizukuStampCommand extends StampCommand {
             Pair.of("stamp0019", "[キャラランクスタンプ] リラックスよ"),
 
             //[イベントスタンプ]
+            //魔法みたいだわ！
+            Pair.of("stamp0536", "[イベントスタンプ] 魔法みたいだわ！"),
+
             //期待に応えるわ
             Pair.of("stamp0428", "[イベントスタンプ] 期待に応えるわ"),
 
