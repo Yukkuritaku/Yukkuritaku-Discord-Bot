@@ -17,6 +17,9 @@ public final class IchikaStampCommand extends StampCommand {
             Pair.of("stamp0012", "[キャラランクスタンプ] ずっと一緒にいようね"),
 
             //[イベントスタンプ]
+            //届いて...！
+            Pair.of("stamp0495", "[イベントスタンプ] 届いて...！"),
+
             //照れるな
             Pair.of("stamp0495", "[イベントスタンプ] 照れるな"),
             //最後までいこう！

@@ -257,7 +257,24 @@ public final class FourFrameCommand extends BaseCommand {
             Pair.of("FNSkiP4aIAIlOXW", "第96話「夢は夢のままで」"),
 
             //第97話「大先生にお願い」
-            Pair.of("FN8JZbhVsAIVu8p", "第97話「大先生にお願い」")
+            Pair.of("FN8JZbhVsAIVu8p", "第97話「大先生にお願い」"),
+
+            //第98話「今も昔も」
+            Pair.of("FOHOU23aIAERtcB", "第98話「今も昔も」"),
+
+            //第99話「焦りと成長」
+            Pair.of("FOgKO5jaAAMPK2L", "第99話「焦りと成長」"),
+
+            //100話おめでとう！
+            //第100話「誰もいないセカイ、だけど…」
+            Pair.of("FPoRKwuacAYZHHz", "第100話「誰もいないセカイ、だけど…」"),
+
+            //みのりちゃんお誕生日おめでとう！
+            //第101話「いつもあなたは」
+            Pair.of("FQRUKw4aQAQWF6-", "第101話「いつもあなたは」"),
+
+            //第102話「ピアノ弾きの逆トルペ」
+            Pair.of("FQloQ9eUYAIKN90", "第102話「ピアノ弾きの逆トルペ」")
     );
 
     public FourFrameCommand() {
@@ -296,7 +313,8 @@ public final class FourFrameCommand extends BaseCommand {
     }
 
     @Override
-    protected void onSlashCommandReceived(@NotNull SlashCommandInteractionEvent event) {}
+    protected void onSlashCommandReceived(@NotNull SlashCommandInteractionEvent event) {
+    }
 
     @Override
     public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
@@ -308,6 +326,7 @@ public final class FourFrameCommand extends BaseCommand {
         var newOption2 = event.getOption("current26-50");
         var newOption3 = event.getOption("current51-74");
         var newOption4 = event.getOption("current75-100");
+        var newOption5 = event.getOption("current99-124");
         if (oldOption != null) {
             add(event, oldOption);
         } else if (newOption1 != null) {
@@ -318,6 +337,8 @@ public final class FourFrameCommand extends BaseCommand {
             add(event, newOption3);
         } else if (newOption4 != null) {
             add(event, newOption4);
+        } else if (newOption5 != null) {
+            add(event, newOption5);
         } else {
             List<Pair<String, String>> returnPrefix = getReturnPrefix();
             int randomPrefix = RANDOM.nextInt(returnPrefix.size());

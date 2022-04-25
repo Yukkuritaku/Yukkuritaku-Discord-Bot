@@ -44,12 +44,14 @@ public class DiscordBot {
 
     private static JDA JDA;
 
-    private static final String TOKEN = System.getenv("TOKEN");
+    private static final String TOKEN =
+     System.getenv("TOKEN")
+    ;
     private static final List<BaseCommand> BASE_COMMAND_REGISTRY = new ArrayList<>();
 
     public static final Logger LOGGER = LoggerFactory.getLogger(DiscordBot.class);
     public static final String PREFIX = ".";
-    public static final String VERSION = "0.12";
+    public static final String VERSION = "0.13";
     public static final String JDA_VERSION = "5.0.0-alpha.5";
 
     public static void main(String[] args) throws LoginException, InterruptedException {
@@ -126,6 +128,8 @@ public class DiscordBot {
                 fourFrameCommand.getCommandDescription() + " 複数に分かれてるのはコマンドオプションが25個以下までしか設定できないから。");
         CommandDataImpl fourFrameData3 = new CommandDataImpl(fourFrameCommand.getCommandName() + "_4",
                 fourFrameCommand.getCommandDescription() + " 複数に分かれてるのはコマンドオプションが25個以下までしか設定できないから。");
+        CommandDataImpl fourFrameData4 = new CommandDataImpl(fourFrameCommand.getCommandName() + "_5",
+                fourFrameCommand.getCommandDescription() + " 複数に分かれてるのはコマンドオプションが25個以下までしか設定できないから。");
         List<Pair<String, String>> fourFramePrefix = fourFrameCommand.getReturnPrefix();
 
         //旧 第1話から第6話まで
@@ -140,7 +144,12 @@ public class DiscordBot {
         OptionData current4 = new OptionData(OptionType.STRING, "current75-100",
                 //旧漫画とコラボ漫画は省くので7になる
                 //最大100 (実際はタイアップ用4コマがあるので99話まで)
-                "宇崎うそさんが描き下ろした4コマ漫画です。このプレフィックスは75話から" + (fourFramePrefix.size() - 7) + "話までを選ぶことが出来ます。");
+                //"宇崎うそさんが描き下ろした4コマ漫画です。このプレフィックスは75話から" + (fourFramePrefix.size() - 7) + "話までを選ぶことが出来ます。"
+                "宇崎うそさんが描き下ろした4コマ漫画です。このプレフィックスは75話から98話までを選ぶことが出来ます。"
+        );
+        System.out.println((fourFramePrefix.size() - 7));
+        OptionData current5 = new OptionData(OptionType.STRING, "current99-124",
+                "宇崎うそさんが描き下ろした4コマ漫画です。このプレフィックスは99話から124話までを選ぶことが出来ます。");
         for (int i = 0; i < fourFramePrefix.size(); i++) {
             if (i < 6) {
                 old.addChoice(fourFramePrefix.get(i).getRight(), fourFramePrefix.get(i).getLeft());
@@ -152,12 +161,15 @@ public class DiscordBot {
                 current3.addChoice(fourFramePrefix.get(i).getRight(), fourFramePrefix.get(i).getLeft());
             } else if (i < 6 + 100) {
                 current4.addChoice(fourFramePrefix.get(i).getRight(), fourFramePrefix.get(i).getLeft());
+            }else if (i < 6 + 125) {
+                current5.addChoice(fourFramePrefix.get(i).getRight(), fourFramePrefix.get(i).getLeft());
             }
         }
         fourFrameData.addOptions(old, current1);
         fourFrameData1.addOptions(current2);
         fourFrameData2.addOptions(current3);
         fourFrameData3.addOptions(current4);
+        fourFrameData4.addOptions(current5);
 
         //コミック
         ComicCommand command = new ComicCommand();
@@ -187,6 +199,7 @@ public class DiscordBot {
                 fourFrameData1,
                 fourFrameData2,
                 fourFrameData3,
+                fourFrameData4,
                 comicCommand,
                 helpCommandData
         ));

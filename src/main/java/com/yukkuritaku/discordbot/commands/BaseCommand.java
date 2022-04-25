@@ -122,8 +122,8 @@ public abstract class BaseCommand extends ListenerAdapter {
 
     /**
      * コマンドのプレフィックスを返します。<p>
-     * {@link com.yukkuritaku.discordbot.commands.stamp.StampCommand StampCommand}の場合、プレフィックスはSekai Viewer(https://sekai.best/)のリソースを通して取得されます。<p>
-     * スタンプを取得するurlはこんな感じ -> https://sekai-res.dnaroma.eu/file/sekai-assets/stamp/stamp[ここ]_rip/stamp[ここ]/stamp[ここ].png<p>
+     * {@link com.yukkuritaku.discordbot.commands.stamp.StampCommand StampCommand}の場合、プレフィックスはSekai Viewer(<a href="https://sekai.best/">https://sekai.best/</a>)のリソースを通して取得されます。<p>
+     * スタンプを取得するurlはこんな感じ -> <a href="https://sekai-res.dnaroma.eu/file/sekai-assets/stamp/stamp">https://sekai-res.dnaroma.eu/file/sekai-assets/stamp/stamp</a>[ここ]_rip/stamp[ここ]/stamp[ここ].png<p>
      * [ここ]にはIdを入れる必要があります！ 例えば... 0001<p>
      * *stamp0001でもstampの部分は置き換えられます。*
      *
