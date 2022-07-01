@@ -19,6 +19,8 @@ public final class AkitoStampCommand extends StampCommand {
             //[イベントスタンプ]
             //いくぞ、お前ら！
             Pair.of("stamp0446", "[イベントスタンプ] いくぞ、お前ら！"),
+            //よくわからねえな
+            Pair.of("stamp0543", "[イベントスタンプ] よくわからねえな"),
 
             //[通常スタンプ]
             //盛り上がろうぜ！（盛り上がっていこうぜ！）

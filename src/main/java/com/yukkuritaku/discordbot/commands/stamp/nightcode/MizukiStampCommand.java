@@ -21,6 +21,9 @@ public final class MizukiStampCommand extends StampCommand {
             Pair.of("stamp0492", "[イベントスタンプ] おかしいな..."),
             //...あーあ
             Pair.of("stamp0444", "[イベントスタンプ] ...あーあ"),
+            //ボクからも...お願い！
+            //瑞希かわいいね
+            Pair.of("stamp0542", "[イベントスタンプ] ボクからも...お願い！"),
 
             //[通常スタンプ]
             //ちょっとー！(ちょっとー！（ぷんぷん）)

@@ -51,7 +51,7 @@ public class DiscordBot {
 
     public static final Logger LOGGER = LoggerFactory.getLogger(DiscordBot.class);
     public static final String PREFIX = ".";
-    public static final String VERSION = "0.13";
+    public static final String VERSION = "0.14";
     public static final String JDA_VERSION = "5.0.0-alpha.5";
 
     public static void main(String[] args) throws LoginException, InterruptedException {
@@ -161,7 +161,7 @@ public class DiscordBot {
                 current3.addChoice(fourFramePrefix.get(i).getRight(), fourFramePrefix.get(i).getLeft());
             } else if (i < 6 + 100) {
                 current4.addChoice(fourFramePrefix.get(i).getRight(), fourFramePrefix.get(i).getLeft());
-            }else if (i < 6 + 125) {
+            } else if (i < 6 + 125) {
                 current5.addChoice(fourFramePrefix.get(i).getRight(), fourFramePrefix.get(i).getLeft());
             }
         }

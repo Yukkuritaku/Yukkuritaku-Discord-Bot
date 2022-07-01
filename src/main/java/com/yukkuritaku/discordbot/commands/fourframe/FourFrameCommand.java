@@ -274,7 +274,43 @@ public final class FourFrameCommand extends BaseCommand {
             Pair.of("FQRUKw4aQAQWF6-", "第101話「いつもあなたは」"),
 
             //第102話「ピアノ弾きの逆トルペ」
-            Pair.of("FQloQ9eUYAIKN90", "第102話「ピアノ弾きの逆トルペ」")
+            Pair.of("FQloQ9eUYAIKN90", "第102話「ピアノ弾きの逆トルペ」"),
+
+            //第103話「ファンのためにできること」
+            Pair.of("FRUPQ_haQAYyhwA", "第103話「ファンのためにできること」"),
+
+            //第104話「ふわふわの約束」
+            Pair.of("FRb4wKHUUAAkD6j", "第104話「ふわふわの約束」"),
+
+            //第105話「緊張のお宅訪問」
+            Pair.of("FRt1E8aaMAA2tvz", "第105話「緊張のお宅訪問」"),
+
+            //第106話「旋律にのせて」
+            Pair.of("FSSC2YOaIAEttfx", "第106話「旋律にのせて」"),
+
+            //第107話「似合いの役職」
+            Pair.of("FS14Gs4UUAA6-jz", "第107話「似合いの役職」"),
+
+            //第108話「昔からの大切な」
+            Pair.of("FS7VK34akAEsYbS", "第108話「昔からの大切な」"),
+
+            //第109話「旅人と仲間たち」
+            Pair.of("FTkXPHDagAIIuFL", "第109話「旅人と仲間たち」"),
+
+            //第110話「主催イベントに向けて」
+            Pair.of("FTpyDqHUAAA1CpW", "第110話「主催イベントに向けて」"),
+
+            //第111話「保護者の権限」
+            Pair.of("FUndyDPaMAAN2pt", "第111話「保護者の権限」"),
+
+            //第112話「そばにいたい」
+            Pair.of("FVV5SXCaMAAtDw4", "第112話「そばにいたい」"),
+
+            //第113話「パーティーは綺麗な部屋で」
+            Pair.of("FV_FBHMakAATGuE", "第113話「パーティーは綺麗な部屋で」"),
+
+            //第114話「メカニカル・ロマン」
+            Pair.of("FWOW2StagAAqCzX", "第114話「メカニカル・ロマン」")
     );
 
     public FourFrameCommand() {

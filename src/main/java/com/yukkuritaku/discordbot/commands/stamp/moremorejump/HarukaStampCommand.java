@@ -22,6 +22,8 @@ public final class HarukaStampCommand extends StampCommand {
             Pair.of("stamp0498", "[イベントスタンプ] 全力でやろう！"),
             //いただきます
             Pair.of("stamp0448", "[イベントスタンプ] いただきます"),
+            //よかった...！
+            Pair.of("stamp0541", "[イベントスタンプ] よかった...！"),
 
             //[通常スタンプ]
             //練習しないと

@@ -22,6 +22,8 @@ public final class NeneStampCommand extends StampCommand {
             //わたしが一番楽しもう！
             Pair.of("stamp0426", "[イベントスタンプ] わたしが一番楽しもう！"),
 
+            Pair.of("stamp0546", "[イベントスタンプ] やるしかないの...！？"),
+
             //[通常スタンプ]
             //(寧々だヨーの圧がある顔のみ)
             Pair.of("stamp0179", "[通常スタンプ] (寧々だヨーの圧がある顔のみ)"),

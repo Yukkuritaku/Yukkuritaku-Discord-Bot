@@ -22,6 +22,8 @@ public final class MafuyuStampCommand extends StampCommand {
             Pair.of("stamp0460", "[イベントスタンプ] う..."),
             //よくわからない
             Pair.of("stamp0422", "[イベントスタンプ] よくわからない"),
+            //...あったかいんだ
+            Pair.of("stamp0545", "[イベントスタンプ] ...あったかいんだ"),
 
             //[通常スタンプ]
             //ひとりになりたい...(裏の表情、虚無の顔)
