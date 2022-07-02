@@ -47,7 +47,7 @@ public abstract class BaseCommand extends ListenerAdapter {
     }
 
     @Override
-    public void onMessageReceived(@NotNull MessageReceivedEvent event) {
+    public final void onMessageReceived(@NotNull MessageReceivedEvent event) {
         String[] splitRaw = event.getMessage().getContentRaw().split("\\s+");
         if (splitRaw[0].equalsIgnoreCase(DiscordBot.PREFIX + getCommandName()) || (
                 getAliases() != null && getAliases().length != 0 && Arrays.stream(this.getAliases())
@@ -65,6 +65,12 @@ public abstract class BaseCommand extends ListenerAdapter {
         onSlashCommandReceived(event);
     }
 
+    /**
+     * Prefixとコマンド名が合っている時に送信するメッセージ
+     * @param event リプライに必須
+     * @deprecated {@link #onSlashCommandReceived(SlashCommandInteractionEvent)}を使用する事を推奨しまする
+     */
+    @Deprecated(forRemoval = true, since = "0.14")
     protected abstract void onMessageCommandReceived(@NotNull MessageReceivedEvent event);
 
     protected abstract void onSlashCommandReceived(@NotNull SlashCommandInteractionEvent event);

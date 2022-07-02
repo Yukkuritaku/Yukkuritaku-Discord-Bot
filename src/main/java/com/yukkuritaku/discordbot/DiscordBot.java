@@ -44,9 +44,7 @@ public class DiscordBot {
 
     private static JDA JDA;
 
-    private static final String TOKEN =
-     System.getenv("TOKEN")
-    ;
+    private static final String TOKEN = System.getenv("TOKEN");
     private static final List<BaseCommand> BASE_COMMAND_REGISTRY = new ArrayList<>();
 
     public static final Logger LOGGER = LoggerFactory.getLogger(DiscordBot.class);
