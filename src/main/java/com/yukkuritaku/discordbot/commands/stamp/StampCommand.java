@@ -79,6 +79,6 @@ public abstract class StampCommand extends BaseCommand {
     public String getUrl() {
         String format = "%s";
         //return "https://sekai-res.dnaroma.eu/file/sekai-assets/stamp/stamp" + format + "_rip/stamp" + format + "/stamp" + format + ".png";
-        return "https://minio.dnaroma.eu/sekai-assets/stamp/" + format + "_rip/stamp" + format + "/stamp" + format + ".png";
+        return "https://minio.dnaroma.eu/sekai-assets/stamp/stamp" + format + "_rip/stamp" + format + "/stamp" + format + ".png";
     }
 }
