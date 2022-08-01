@@ -186,6 +186,6 @@ public final class ComicCommand extends BaseCommand {
     @Override
     public String getUrl() {
         String prefix = "%s";
-        return "https://sekai-res.dnaroma.eu/file/sekai-assets/comic/one_frame_rip/" + prefix + ".png";
+        return "https://minio.dnaroma.eu/sekai-assets/comic/one_frame_rip/" + prefix + ".png";
     }
 }

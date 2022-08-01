@@ -49,7 +49,7 @@ public class DiscordBot {
 
     public static final Logger LOGGER = LoggerFactory.getLogger(DiscordBot.class);
     public static final String PREFIX = ".";
-    public static final String VERSION = "0.14";
+    public static final String VERSION = "0.15";
     public static final String JDA_VERSION = "5.0.0-alpha.5";
 
     public static void main(String[] args) throws LoginException, InterruptedException {

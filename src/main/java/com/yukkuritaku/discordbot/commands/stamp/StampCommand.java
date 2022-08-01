@@ -41,7 +41,7 @@ public abstract class StampCommand extends BaseCommand {
         int randomStamp = RANDOM.nextInt(stampType.size());
         String id = stampType.get(randomStamp).getLeft();
         String replacedId = id.replace("stamp", "");
-        String url = "https://sekai-res.dnaroma.eu/file/sekai-assets/stamp/stamp" +
+        String url = "https://minio.dnaroma.eu/sekai-assets/stamp/stamp" +
                 replacedId + "_rip/stamp" + replacedId + "/stamp" + replacedId + ".png";
         EmbedBuilder builder = new EmbedBuilder();
         builder.setImage(url);
@@ -78,6 +78,7 @@ public abstract class StampCommand extends BaseCommand {
     @Override
     public String getUrl() {
         String format = "%s";
-        return "https://sekai-res.dnaroma.eu/file/sekai-assets/stamp/stamp" + format + "_rip/stamp" + format + "/stamp" + format + ".png";
+        //return "https://sekai-res.dnaroma.eu/file/sekai-assets/stamp/stamp" + format + "_rip/stamp" + format + "/stamp" + format + ".png";
+        return "https://minio.dnaroma.eu/sekai-assets/stamp/" + format + "_rip/stamp" + format + "/stamp" + format + ".png";
     }
 }
