@@ -23,6 +23,8 @@ public final class AnStampCommand extends StampCommand {
             Pair.of("stamp0425", "[イベントスタンプ] 信じるよ！"),
             //あー！
             Pair.of("stamp0544", "[イベントスタンプ] あー！"),
+            //みんな、大好き！
+            Pair.of("stamp0548", "[イベントスタンプ] みんな、大好き！"),
 
             //[通常スタンプ]
             //へー（じっと目）

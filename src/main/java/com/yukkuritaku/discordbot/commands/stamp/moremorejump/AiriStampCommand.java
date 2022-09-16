@@ -24,6 +24,8 @@ public final class AiriStampCommand extends StampCommand {
             Pair.of("stamp0447", "[イベントスタンプ] 信じて待ちましょ！"),
             //ここからスタートよ
             Pair.of("stamp0424", "[イベントスタンプ] ここからスタートよ"),
+            //実力を見せてもらうわ
+            Pair.of("stamp0551", "[イベントスタンプ] 実力を見せてもらうわ"),
 
             //[通常スタンプ]
             //任せなさい！

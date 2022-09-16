@@ -22,6 +22,8 @@ public final class EnaStampCommand extends StampCommand {
             Pair.of("stamp0454", "[イベントスタンプ] やるじゃん"),
             //まだ諦めたくない
             Pair.of("stamp0430", "[イベントスタンプ] まだ諦めたくない"),
+            //うっ...！
+            Pair.of("stamp0554", "[イベントスタンプ] うっ...！"),
 
             //[通常スタンプ]
             //(自撮り)

@@ -21,6 +21,8 @@ public final class ToyaStampCommand extends StampCommand {
             Pair.of("stamp0497", "[イベントスタンプ] いい経験になった"),
             //俺は俺の道を進む
             Pair.of("stamp0429", "[イベントスタンプ] 俺は俺の道を進む"),
+            //手加減はしない
+            Pair.of("stamp0550", "[イベントスタンプ] 手加減はしない"),
 
             //[通常スタンプ]
             //一緒に歌うか？

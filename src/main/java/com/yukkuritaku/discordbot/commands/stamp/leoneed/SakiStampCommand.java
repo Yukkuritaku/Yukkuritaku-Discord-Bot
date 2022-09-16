@@ -23,6 +23,8 @@ public final class SakiStampCommand extends StampCommand {
             Pair.of("stamp0432", "[イベントスタンプ] うぇーん"),
             //おつかれさま！
             Pair.of("stamp0421", "[イベントスタンプ] おつかれさま！"),
+            //まだー－できる！
+            Pair.of("stamp0549", "[イベントスタンプ] まだー－できる！"),
 
             //[通常スタンプ]
             //いいライブだったね！

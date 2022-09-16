@@ -310,7 +310,49 @@ public final class FourFrameCommand extends BaseCommand {
             Pair.of("FV_FBHMakAATGuE", "第113話「パーティーは綺麗な部屋で」"),
 
             //第114話「メカニカル・ロマン」
-            Pair.of("FWOW2StagAAqCzX", "第114話「メカニカル・ロマン」")
+            Pair.of("FWOW2StagAAqCzX", "第114話「メカニカル・ロマン」"),
+
+            //第115話「弱点属性」
+            Pair.of("FW852YiacAAuvwE", "第115話「弱点属性」"),
+
+            //第116話「駆け引きとは」
+            Pair.of("FYACmxSaMAApFuY", "第116話「駆け引きとは」"),
+
+            //第117話「わたし達のペース」
+            Pair.of("FYEvfdDaQAABzYY", "第117話「わたし達のペース」"),
+
+            //第118話「一番のプレゼント」
+            Pair.of("FYjfcGsaMAABTqg", "第118話「一番のプレゼント」"),
+
+            //第119話「新しい曲！」
+            Pair.of("FYzRSZkaQAAz7Wt", "第119話「新しい曲！」"),
+
+            //第120話「白熱！ワクワクゲーム大会」
+            Pair.of("FZm0ZVBaUAAV8k6", "第120話「白熱！ワクワクゲーム大会」"),
+
+            //第121話「クラスメイトと一緒に」
+            Pair.of("FZzCF8OaIAEj1Ux", "第121話「クラスメイトと一緒に」"),
+
+            //第122話「大成功をもう一度」
+            Pair.of("FaaXKphacAE5ghk", "第122話「大成功をもう一度」"),
+
+            //第123話「腐れ縁な絆」
+            Pair.of("FbFhAYpagAEoo5G", "第123話「腐れ縁な絆」"),
+
+            //第124話「きょうだいの近さ」
+            Pair.of("FbS_ZCIaUAAXzzu", "第124話「きょうだいの近さ」"),
+
+            //第125話「灯火に照らされて」
+            //ミクちゃん誕生日おめでとう！
+            Pair.of("FbdSWzGaIAAwA1H", "第125話「灯火に照らされて」"),
+
+            //第126話「個別練習」
+            Pair.of("FcBUL3NaMAAht5y", "第126話「個別練習」"),
+
+            //第127話「特別な日は夜までも」
+            Pair.of("FcLg-8kaAAAxtcg", "第127話「特別な日は夜までも」")
+
+
     );
 
     public FourFrameCommand() {
@@ -363,6 +405,7 @@ public final class FourFrameCommand extends BaseCommand {
         var newOption3 = event.getOption("current51-74");
         var newOption4 = event.getOption("current75-100");
         var newOption5 = event.getOption("current99-124");
+        var newOption6 = event.getOption("current125-150");
         if (oldOption != null) {
             add(event, oldOption);
         } else if (newOption1 != null) {
@@ -375,6 +418,8 @@ public final class FourFrameCommand extends BaseCommand {
             add(event, newOption4);
         } else if (newOption5 != null) {
             add(event, newOption5);
+        }else if (newOption6 != null) {
+            add(event, newOption6);
         } else {
             List<Pair<String, String>> returnPrefix = getReturnPrefix();
             int randomPrefix = RANDOM.nextInt(returnPrefix.size());
