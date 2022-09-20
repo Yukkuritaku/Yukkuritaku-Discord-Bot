@@ -128,6 +128,9 @@ public class DiscordBot {
                 fourFrameCommand.getCommandDescription() + " 複数に分かれてるのはコマンドオプションが25個以下までしか設定できないから。");
         CommandDataImpl fourFrameData4 = new CommandDataImpl(fourFrameCommand.getCommandName() + "_5",
                 fourFrameCommand.getCommandDescription() + " 複数に分かれてるのはコマンドオプションが25個以下までしか設定できないから。");
+        CommandDataImpl fourFrameData5 = new CommandDataImpl(fourFrameCommand.getCommandName() + "_6",
+                fourFrameCommand.getCommandDescription() + " 複数に分かれてるのはコマンドオプションが25個以下までしか設定できないから。");
+
         List<Pair<String, String>> fourFramePrefix = fourFrameCommand.getReturnPrefix();
 
         //旧 第1話から第6話まで
@@ -173,6 +176,7 @@ public class DiscordBot {
         fourFrameData2.addOptions(current3);
         fourFrameData3.addOptions(current4);
         fourFrameData4.addOptions(current5);
+        fourFrameData5.addOptions(current6);
 
         //コミック
         ComicCommand command = new ComicCommand();
