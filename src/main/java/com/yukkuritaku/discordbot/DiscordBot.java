@@ -207,6 +207,7 @@ public class DiscordBot {
                 fourFrameData2,
                 fourFrameData3,
                 fourFrameData4,
+                fourFrameData5,
                 comicCommand,
                 helpCommandData
         ));
